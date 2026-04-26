@@ -31,4 +31,23 @@ JSON:
 - `{ "input": "...", "source": "voice" | "text" }`
 
 Response JSON (any field is accepted):
-- `{ "content": "..." }` or `{ "output": "..." }` or `{ "text": "..." }`
+- `{ "content": "..." }` or `{ "output": "..." }` or `{ "text": "..." }
+`
+
+## Next.js Approval UI
+
+A new Next.js approval UI is now included at the project root:
+- `app/page.js` — topic input, review, approve/edit/discard, scheduler call
+- `app/globals.css` — approval UI styling
+- `package.json` — Next.js dependencies and scripts
+
+The UI calls these backend endpoints:
+- `POST /get-context`
+- `POST /generate-post`
+- `POST /schedule-post`
+
+Run locally:
+1. `npm install`
+2. `npm run dev`
+
+If your backend is on a different host, set `NEXT_PUBLIC_BACKEND_BASE_URL`.
